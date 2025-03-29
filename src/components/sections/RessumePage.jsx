@@ -4,8 +4,8 @@ import TimeLine from "../TimeLine.jsx";
 
 const Ressume = () => {
   return (
-    <div className="h-screen flex flex-row justify-center items-center overflow-hidden">
-      <div className="max-w-full w-1/2 max-h-full overflow-hidden flex flex-col justify-center items-center">
+    <div className="min-h-screen flex flex-col  md:flex-row  md:justify-center items-center overflow-hidden">
+      <div className="max-w-full md:w-1/2 max-h-full overflow-hidden flex flex-col        items-center">
         <div className="mb-4">
           <h1 className="text-3xl text-teal-400 font-bold">Ressume</h1>
         </div>
@@ -15,13 +15,13 @@ const Ressume = () => {
           href="https://www.linkedin.com/in/johan-lopez-torres/overlay/1737727230752/single-media-viewer/?profileId=ACoAAD59S9gB5t4AZw8grtBcdiOuJZCqgPqOhB0" // Cambia esta ruta al archivo PDF de tu CV
           target="_blank"
           rel="noopener noreferrer"
-          className="relative group hover:border-yellow-500 hover:scale-105 hover:shadow-xl hover:border-2 rounded-lg transition-all duration-300 ease-in-out"
-// Agregamos un contenedor relativo para posicionar el texto sobre la imagen
+          className="relative group  w-70 hover:border-yellow-500 hover:scale-105 hover:shadow-xl hover:border-2 rounded-lg transition-all duration-300 ease-in-out"
+          // Agregamos un contenedor relativo para posicionar el texto sobre la imagen
         >
           <img
             src={resumeImage} // Usamos la imagen importada
             alt="Vista previa de mi CV"
-            className="object-contain w-80 h-xl border-2 border-gray-300 rounded-lg shadow-lg transition-all duration-300 
+            className="object-contain w-72  md:w-80  border-2 border-gray-300 rounded-lg shadow-lg transition-all duration-300 
             
             group-hover:brightness-50" // Efecto de oscurecer la imagen
           />
@@ -33,7 +33,10 @@ const Ressume = () => {
       </div>
 
       {/* DIV SEPARATION */}
-      <div className="w-1/2">
+      <div className="h-24 md:h-0"></div>
+
+      {/* TIMELINE COMPONENT */}
+      <div className="max-w-full md:w-1/2">
         <TimeLine />
       </div>
     </div>

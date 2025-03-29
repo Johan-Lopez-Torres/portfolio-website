@@ -72,7 +72,7 @@ const ScrollButtons = () => {
     <>
       {showButtons && (
         <div
-          className="fixed bottom-5 right-5 flex flex-col items-center space-y-3 opacity-0 transition-opacity duration-1000 ease-in-out"
+          className="fixed bottom-7 right-7 flex flex-col items-center space-y-3 opacity-0 transition-opacity duration-1000 ease-in-out"
           style={{ opacity: showButtons ? 1 : 0 }} // Transición suave en la opacidad de los botones
         >
           {/* Botón de subir */}
@@ -80,7 +80,7 @@ const ScrollButtons = () => {
             onClick={scrollToTop}
             className="shadow-lg transition-all duration-300 ease-in-out transform hover:scale-125 active:scale-95"
           >
-            <FaArrowCircleUp size={45} />
+            <FaArrowCircleUp className="hover:border-4  hover:border-white rounded-full" size={45} />
           </button>
 
           {/* Espacio entre los botones */}
@@ -91,7 +91,7 @@ const ScrollButtons = () => {
             onClick={scrollToBottom}
             className="shadow-lg transition-all duration-300 ease-in-out transform hover:scale-125 active:scale-95"
           >
-            <FaArrowCircleDown size={45} />
+            <FaArrowCircleDown className="hover:border-4  rounded-full" size={45} />
           </button>
         </div>
       )}

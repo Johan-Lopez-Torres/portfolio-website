@@ -12,6 +12,7 @@ import { Contact } from "./components/sections/Contact";
 import Ressume from "./components/sections/RessumePage";
 import Skills from "./components/sections/Skills";
 import ScrollButtons from "./components/ScrollButtons";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,20 +54,28 @@ function App() {
 
       {/* Contenido de la aplicación */}
       <div
-        className={`min-h-screen px-28 transition-opacity duration-700 ${
+        className={`min-h-screen  px-36 md:px-44 transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-neutral-900 text-yellow-200`}
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
+        <div className="h-20"></div>
         <About />
+        <div className="lg:h-0 h-20"></div>
         <Skills />
+        <div className="lg:h-0 h-20"></div>
+
         <Ressume />
+        <div className="h-16"></div>
         <Projects />
+        <div className="h-16"></div>
+
         <Contact />
-          <ScrollButtons />
+        <ScrollButtons />
       </div>
+      <Footer />
     </>
   );
 }

@@ -10,6 +10,7 @@ body {
   font-family: "Space Grotesk", sans-serif;
   background: #0a0a0a;
   color: #f3f4f6;
+  overflow: auto;
 }
 
 @layer utilities {
@@ -167,3 +168,39 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+
+
+
+
+
+/* Estilo general del scrollbar */
+body::-webkit-scrollbar {
+  width: 16px; /* Ancho del scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #6b6b6b; /* Color oscuro del scrollbar */
+  border-radius: 46px; /* Bordes redondeados */
+
+}
+
+
+body::-webkit-scrollbar-track {
+  background-color: #414040; /* Fondo del track del scrollbar */
+}
+
+/* Estilo del scrollbar para pantallas pequeñas */
+@media (max-width: 768px) {
+  body::-webkit-scrollbar-thumb {
+    background-color: #555; /* Color más oscuro para pantallas pequeñas */
+ 
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: #414040; /* Fondo más oscuro del track */
+  }
+}
+
+

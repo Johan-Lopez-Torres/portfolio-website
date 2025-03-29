@@ -22,15 +22,15 @@ const TimeLine = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white  flex items-center justify-center">
-      <Card className="w-full max-w-4xl bg-neutral-900 border-0">
+    <div className=" min-h-full text-white  flex items-center justify-center">
+      <Card className="  max-w-4xl bg-neutral-900 border-0">
         <CardHeader>
           <CardTitle className="text-3xl text-center text-teal-300">
             Experience
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="relative pl-6">
+          <div className="  relative   pl-6 ">
             {/* Línea vertical */}
             <div className="absolute left-4 top-0 bottom-0 w-[3px] bg-teal-800"></div>
             
