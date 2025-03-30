@@ -4,8 +4,8 @@ import TimeLine from "../TimeLine.jsx";
 
 const Ressume = () => {
   return (
-    <div className="min-h-screen flex flex-col  md:flex-row  md:justify-center items-center overflow-hidden">
-      <div className="max-w-full md:w-1/2 max-h-full overflow-hidden flex flex-col        items-center">
+    <div className=" min-h-screen flex flex-col  md:flex-row  md:justify-center items-center overflow-hidden">
+      <div className="ressume-container max-w-full md:w-1/2 min-h-screen overflow-hidden flex flex-col        items-center">
         <div className="mb-4">
           <h1 className="text-3xl text-teal-400 font-bold">Ressume</h1>
         </div>
@@ -36,7 +36,7 @@ const Ressume = () => {
       <div className="h-24 md:h-0"></div>
 
       {/* TIMELINE COMPONENT */}
-      <div className="max-w-full md:w-1/2">
+      <div className="experience-container  min-h-screen max-w-full md:w-1/2">
         <TimeLine />
       </div>
     </div>

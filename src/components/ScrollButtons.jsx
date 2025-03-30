@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowCircleDown } from "react-icons/fa";
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowAltCircleUp } from "react-icons/fa";
+import { FaArrowAltCircleDown } from "react-icons/fa";
+
+
+
 
 const ScrollButtons = () => {
   const [showButtons, setShowButtons] = useState(false);
@@ -80,7 +83,7 @@ const ScrollButtons = () => {
             onClick={scrollToTop}
             className="shadow-lg transition-all duration-300 ease-in-out transform hover:scale-125 active:scale-95"
           >
-            <FaArrowCircleUp className="hover:border-4  hover:border-white rounded-full" size={45} />
+            <FaArrowAltCircleUp className="hover:border-4   rounded-full" size={45} />
           </button>
 
           {/* Espacio entre los botones */}
@@ -91,7 +94,7 @@ const ScrollButtons = () => {
             onClick={scrollToBottom}
             className="shadow-lg transition-all duration-300 ease-in-out transform hover:scale-125 active:scale-95"
           >
-            <FaArrowCircleDown className="hover:border-4  rounded-full" size={45} />
+            <FaArrowAltCircleDown className="hover:border-4  rounded-full" size={45} />
           </button>
         </div>
       )}

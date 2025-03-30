@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { IoMenuOutline } from "react-icons/io5";
 
-export const Navbar = ({ menuOpen, setMenuOpen }) => {
+
+export const Navbar = ({ menuOpen, setMenuOpen, setIsModalOpen }) => {
+  
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
@@ -50,31 +52,33 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   };
 
   return (
-    <nav className=" fixed top-0 left-0 inset-x-0 w-full z-40 backdrop-blur-lg shadow-lg">
+    <nav className="fixed top-0 left-0 inset-x-0 w-full z-40 backdrop-blur-lg shadow-lg">
       <div className="max-w-5xl mx-auto">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <a href="#home" className="font-mono text-xl font-bold text-white">
-            Johan<span className="text-teal-300">.tech</span>
+            Johan<span className="text-teal-300">.Lopez</span>
           </a>
 
-          {/* Icono de menú para móviles */}
           <div
-            className="relative cursor-pointer z-40 md:hidden px-4"  // Ajustamos el margen aquí
+            className="relative cursor-pointer z-40 md:hidden px-4"
             onClick={() => setMenuOpen((prev) => !prev)}
           >
             <IoMenuOutline size={24} color="white" />
           </div>
 
-          {/* Menú de navegación para dispositivos de escritorio */}
           <div className="hidden md:flex items-center space-x-8">
-            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+            {["Home", "About", "Skills", "Projects", "Contact", "Email"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(item.toLowerCase());
+                  if (item === "Email") {
+                    console.log("Email clicked");
+                    setIsModalOpen(true); // Open the modal when "Email" is clicked
+                  } else {
+                    scrollToSection(item.toLowerCase());
+                  }
                 }}
                 className={`text-gray-300 transition-colors duration-300 ${
                   activeSection === item.toLowerCase()
@@ -88,16 +92,19 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           </div>
         </div>
 
-        {/* Menú desplegable para dispositivos móviles */}
         {menuOpen && (
           <div className="md:hidden flex flex-col items-center space-y-4 py-4">
-            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+            {["Home", "About", "Skills", "Projects", "Contact", "Email"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(item.toLowerCase());
+                  if (item === "Email") {
+                    setIsModalOpen(true); // Open the modal when "Email" is clicked
+                  } else {
+                    scrollToSection(item.toLowerCase());
+                  }
                   setMenuOpen(false);
                 }}
                 className={`text-gray-300 transition-colors duration-300 ${

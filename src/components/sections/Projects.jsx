@@ -1,4 +1,12 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import arq from "../../assets/arq.png";
+import { FaJava } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
+import { FaPython } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
+import { SiGooglecloud } from "react-icons/si";
+import { SiKubernetes } from "react-icons/si";
+import { FaDocker } from "react-icons/fa";
 
 export const Projects = () => {
   return (
@@ -10,7 +18,7 @@ export const Projects = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Project 1 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-yellow-500 hover:transition hover:shadow-[1px_-3px_67px_-46px_rgba(234,_179,_8,_0.5)]">
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-neutral-800 hover:transition hover:shadow-[0px_4px_25px_-9px_rgba(0,_0,_0,_0.8)]">
               <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
               <p className="text-gray-400 mb-4">
                 Scalable cloud infrastructure management with real-time monitoring and automated scaling.
@@ -25,11 +33,44 @@ export const Projects = () => {
                   </span>
                 ))}
               </div>
+              <div className="my-6">
+                 <img className="border-teal-500 border-2 rounded-2xl" src={arq} />
+              </div>
+
+              <div className="flex flex-row justify-center mt-4 ">
+                <FaJava className="text-gray-400 hover:text-gray-300 text-5xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110" 
+                title="Java"
+                
+                />
+                <FaGolang className="text-gray-400 hover:text-gray-300 text-5xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110"
+                title="Golang"
+                 />
+                <FaPython className="text-gray-400 hover:text-gray-300 text-5xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110"
+                title="Python"
+                 />
+                <FaNodeJs className="text-gray-400 hover:text-gray-300 text-5xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110" 
+                title="Node.js"
+                />
+                <SiGooglecloud className="text-gray-400 hover:text-gray-300 text-5xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110"
+                title="Google Cloud"
+                
+                />
+
+                <SiKubernetes className="text-gray-400 hover:text-gray-300 text-5xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110"
+                title="Kubernetes"
+                />
+                <FaDocker className="text-gray-400 hover:text-gray-300 text-5xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110"
+                title="Docker"
+                />
+
+              </div>
               <div className="flex justify-between items-center">
-                <a href="#" className="text-yellow-400 hover:text-yellow-300 transition-colors my-4">
+                <a href="#" className="text-yellow-200 hover:font-semibold  hover:-translate-y-0.5 transition-colors my-4">
                   View Project →
                 </a>
               </div>
+             
+
             </div>
 
             {/* Project 2 */}
@@ -71,6 +112,8 @@ export const Projects = () => {
                   </span>
                 ))}
               </div>
+
+
               <div className="flex justify-between items-center">
                 <a href="#" className="text-yellow-400 hover:text-yellow-300 transition-colors my-4">
                   View Project →

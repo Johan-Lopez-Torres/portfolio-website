@@ -23,8 +23,8 @@ const TimeLine = () => {
 
   return (
     <div className=" min-h-full text-white  flex items-center justify-center">
-      <Card className="  max-w-4xl bg-neutral-900 border-0">
-        <CardHeader>
+      <Card className="  max-w-4xl bg-neutral-900 border-0 p-0">
+        <CardHeader className="p-0 m-0" >
           <CardTitle className="text-3xl text-center text-teal-300">
             Experience
           </CardTitle>

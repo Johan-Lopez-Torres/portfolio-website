@@ -13,16 +13,22 @@ import Ressume from "./components/sections/RessumePage";
 import Skills from "./components/sections/Skills";
 import ScrollButtons from "./components/ScrollButtons";
 import Footer from "./components/Footer";
+import DialogDemo from "./components/EmailModal";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
 
   // Hook to track scroll progress
   const { scrollYProgress } = useViewportScroll();
 
   // State to store scroll progress and trigger content visibility
   const [yProgress, setYProgress] = useState(0);
+
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle("dark");
+  };
 
   useEffect(() => {
     return scrollYProgress.onChange((p) => {
@@ -58,7 +64,13 @@ function App() {
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-neutral-900 text-yellow-200`}
       >
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Navbar
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+          setIsModalOpen={setIsModalOpen} // Pass the function to open the modal
+        />
+        {isModalOpen && <DialogDemo isOpen={isModalOpen} closeDialog={() => setIsModalOpen(false)} />} {/* Pass modal control */}
+
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
         <div className="h-20"></div>

@@ -1,5 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@layer utilities {
+  .text-neon-soft {
+    text-shadow: 
+   
+      0 0 40px rgba(0, 255, 255, 0.63); /* Resplandor difuso */
+  }
+}
+
+
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -169,12 +179,6 @@ body {
   }
 }
 
-
-
-
-
-
-
 /* Estilo general del scrollbar */
 body::-webkit-scrollbar {
   width: 16px; /* Ancho del scrollbar */
@@ -183,9 +187,7 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #6b6b6b; /* Color oscuro del scrollbar */
   border-radius: 46px; /* Bordes redondeados */
-
 }
-
 
 body::-webkit-scrollbar-track {
   background-color: #414040; /* Fondo del track del scrollbar */
@@ -195,7 +197,6 @@ body::-webkit-scrollbar-track {
 @media (max-width: 768px) {
   body::-webkit-scrollbar-thumb {
     background-color: #555; /* Color más oscuro para pantallas pequeñas */
- 
   }
 
   body::-webkit-scrollbar-track {
@@ -203,4 +204,11 @@ body::-webkit-scrollbar-track {
   }
 }
 
-
+/* En tu archivo CSS */
+/* @media (min-width: 1190px) {
+  .flex-row-1190 {
+    display: flex;
+    flex-direction: row;
+  }
+}
+ */
