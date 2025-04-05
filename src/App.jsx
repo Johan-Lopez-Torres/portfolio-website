@@ -60,7 +60,7 @@ function App() {
 
       {/* Contenido de la aplicación */}
       <div
-        className={`min-h-screen  px-36 md:px-44 transition-opacity duration-700 ${
+        className={`min-h-screen  px-28 md:px-44 transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-neutral-900 text-yellow-200`}
       >

@@ -17,7 +17,7 @@ export const About = () => {
       className="min-h-screen flex items-center justify-center "
     >
       <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-3xl mx-auto ">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r text-teal-400 text-center">
             {" "}
             About Me
