@@ -75,7 +75,7 @@ const ScrollButtons = () => {
     <>
       {showButtons && (
         <div
-          className="fixed bottom-7 right-7 flex flex-col items-center space-y-3 opacity-0 transition-opacity duration-1000 ease-in-out"
+          className="fixed  bottom-40  right-4 lg:bottom-7  lg:right-7 flex flex-col items-center space-y-3 opacity-0 transition-opacity duration-1000 ease-in-out"
           style={{ opacity: showButtons ? 1 : 0 }} // Transición suave en la opacidad de los botones
         >
           {/* Botón de subir */}

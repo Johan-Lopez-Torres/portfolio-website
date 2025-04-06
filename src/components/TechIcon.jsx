@@ -28,7 +28,9 @@ const TechIcon = ({ name, title, className = '' }) => {
 
   return (
     <IconComponent
-      className={`text-gray-400 hover:text-gray-300 text-5xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110 ${className}`}
+      className={`text-gray-400 hover:text-yellow-200 text-5xl cursor-pointer mx-3 transition-colors duration-100 ease-in-out transform hover:scale-110
+        
+        ${className}`}
       title={title}
     />
   );

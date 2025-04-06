@@ -19,13 +19,13 @@ export const Projects = () => {
       className="min-h-screen flex items-center justify-center "
     >
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="min-w-80 max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-teal-400 text-center">
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Project 1 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-neutral-800 hover:transition hover:shadow-[0px_4px_25px_-9px_rgba(0,_0,_0,_0.8)]">
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1  hover:transition hover:border-yellow-500 hover:shadow-[1px_-3px_67px_-46px_rgba(234,_179,_8,_0.5)]">
               <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
               <p className="text-gray-400 mb-4">
                 Scalable cloud infrastructure management with real-time
@@ -43,7 +43,7 @@ export const Projects = () => {
               </div>
               <div className="my-6">
                 <img
-                  className="border-teal-500 border-2 rounded-2xl"
+                  className=" border-2 rounded-2xl"
                   src={arq}
                   alt="Cloud Platform"
                 />

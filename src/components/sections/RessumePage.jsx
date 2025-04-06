@@ -5,7 +5,7 @@ import TimeLine from "../TimeLine.jsx";
 const Ressume = () => {
   return (
     <div className=" min-h-screen flex flex-col  md:flex-row  md:justify-center items-center overflow-hidden">
-      <div className="ressume-container max-w-full md:w-1/2 min-h-screen overflow-hidden flex flex-col        items-center">
+      <div className="ressume-container  min-w-80 max-w-full md:w-1/2 min-h-screen overflow-hidden flex flex-col        items-center">
         <div className="mb-4">
           <h1 className="text-3xl text-teal-400 font-bold">Ressume</h1>
         </div>
@@ -15,7 +15,7 @@ const Ressume = () => {
           href="https://www.linkedin.com/in/johan-lopez-torres/overlay/1737727230752/single-media-viewer/?profileId=ACoAAD59S9gB5t4AZw8grtBcdiOuJZCqgPqOhB0" // Cambia esta ruta al archivo PDF de tu CV
           target="_blank"
           rel="noopener noreferrer"
-          className="relative group  w-70 hover:border-yellow-500 hover:scale-105 hover:shadow-xl hover:border-2 rounded-lg transition-all duration-300 ease-in-out"
+          className="relative group  w-70  hover:scale-105 hover:shadow-xl hover:border-2 rounded-lg transition-all duration-300 ease-in-out"
           // Agregamos un contenedor relativo para posicionar el texto sobre la imagen
         >
           <img
