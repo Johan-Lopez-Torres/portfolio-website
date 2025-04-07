@@ -1,6 +1,10 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import arq from "../../assets/arq.png";
+import arq2 from "../../assets/arq2.png";
+import arq3 from "../../assets/arq3.png";
 import TechIcon from "../TechIcon";
+import ProjectCard from "../ProjectCard";
+
 
 export const Projects = () => {
   const icons = [
@@ -11,6 +15,26 @@ export const Projects = () => {
     { name: "googlecloud", title: "Google Cloud" },
     { name: "kubernetes", title: "Kubernetes" },
     { name: "docker", title: "Docker" },
+  ];
+
+  const icons2 = [
+
+    { name: "postgresql", title: "PostgreSQL" },
+    { name: "react", title: "React" },
+    { name: "redux", title: "Redux" },
+    { name: "spring", title: "Spring" },
+    { name: "mysql", title: "MySQL" },
+    { name: "rabbitmq", title: "RabbitMQ" },
+    { name: "redis", title: "Redis" },
+  ];
+
+  const icons3 = [
+    { name: "jenkins", title: "Jenkins" },
+    { name: "aws", title: "AWS" },
+    { name: "docker", title: "Docker" },
+    { name: "kubernetes", title: "Kubernetes" },
+    { name: "java", title: "Java" },
+    { name: "golang", title: "Golang" },
   ];
 
   return (
@@ -25,128 +49,38 @@ export const Projects = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Project 1 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1  hover:transition hover:border-yellow-500 hover:shadow-[1px_-3px_67px_-46px_rgba(234,_179,_8,_0.5)]">
-              <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
-              <p className="text-gray-400 mb-4">
-                Scalable cloud infrastructure management with real-time
-                monitoring and automated scaling.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-teal-700 text-white py-1 px-3 rounded-full text-sm hover:bg-teal-900 transition-all hover:-translate-y-0.5"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="my-6">
-                <img
-                  className=" border-2 rounded-2xl"
-                  src={arq}
-                  alt="Cloud Platform"
-                />
-              </div>
-
-              <div className="flex flex-row justify-center mt-4">
-                {icons.map((icon, index) => (
-                  <TechIcon key={index} name={icon.name} title={icon.title} />
-                ))}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-yellow-200 hover:font-semibold hover:-translate-y-0.5 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
+            <ProjectCard
+              title="Microservices-based Eccomerce Platform"
+              description="Scalable cloud infrastructure management with real-time monitoring and automated scaling."
+              techStack={["React", "Node.js", "AWS", "Docker"]}
+              imageSrc={arq}
+              projectLink="#"
+              icons={icons}
+            />
 
             {/* Project 2 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-yellow-500 hover:transition hover:shadow-[1px_-3px_67px_-46px_rgba(234,_179,_8,_0.5)]">
-              <h3 className="text-xl font-bold mb-2">AI Analytics Dashboard</h3>
-              <p className="text-gray-400 mb-4">
-                ML-powered data visualization platform with predictive analytics
-                and interactive reports.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Python", "TensorFlow", "D3.js", "Flask"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-teal-700 text-white py-1 px-3 rounded-full text-sm hover:bg-teal-900 transition-all hover:-translate-y-0.5"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-yellow-400 hover:text-yellow-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
-
+            <ProjectCard
+              title="Medical and Health Centre Booking software"
+              description="Scalable cloud infrastructure management with real-time monitoring and automated scaling."
+              techStack={["React", "Node.js", "AWS", "Docker"]}
+              imageSrc={arq2}
+              projectLink="#"
+              icons={icons2}
+            />
             {/* Project 3 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-yellow-500 hover:transition hover:shadow-[1px_-3px_67px_-46px_rgba(234,_179,_8,_0.5)]">
-              <h3 className="text-xl font-bold mb-2">E-Commerce Web App</h3>
-              <p className="text-gray-400 mb-4">
-                Full-stack e-commerce with modern UI, secure payment
-                integration, and customizable product inventory.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="bg-teal-700 text-white py-1 px-3 rounded-full text-sm hover:bg-teal-900 transition-all hover:-translate-y-0.5"
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
+            <ProjectCard
+              title="CI/CD Pipeline for a Social media platform "
+              description="A real-time chat application using WebSockets and Node.js."
+              techStack={["React", "Node.js", "WebSockets"]}
+              imageSrc={arq3}
+              projectLink="#"
+              icons={icons3}
+            />
 
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-yellow-400 hover:text-yellow-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
 
-            {/* Project 4 */}
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-yellow-500 hover:transition hover:shadow-[1px_-3px_67px_-46px_rgba(234,_179,_8,_0.5)]">
-              <h3 className="text-xl font-bold mb-2">Real-Time Chat App</h3>
-              <p className="text-gray-400 mb-4">
-                Scalable chat platform supporting real-time messaging, presence,
-                and group chat features.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-teal-700 text-white py-1 px-3 rounded-full text-sm hover:bg-teal-900 transition-all hover:-translate-y-0.5"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center">
-                <a
-                  href="#"
-                  className="text-yellow-400 hover:text-yellow-300 transition-colors my-4"
-                >
-                  View Project →
-                </a>
-              </div>
-            </div>
+            
+
+           
           </div>
         </div>
       </RevealOnScroll>

@@ -13,7 +13,7 @@ import Ressume from "./components/sections/RessumePage";
 import Skills from "./components/sections/Skills";
 import ScrollButtons from "./components/ScrollButtons";
 import Footer from "./components/Footer";
-import DialogDemo from "./components/EmailModal";
+import DialogDemo from "./components/modals/EmailModal";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);

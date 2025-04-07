@@ -8,8 +8,22 @@ export const About = () => {
     "TailwindCSS",
     "Svelte",
   ];
-
-  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "GraphQL"];
+  
+  const backendSkills = [
+    "Node.js",
+    "Python",
+    "AWS",
+    "MongoDB",
+    "GraphQL",
+  ];
+  
+  const devopsSkills = [
+    "Docker",
+    "Kubernetes",
+    "CI/CD",
+    "Terraform",
+    "Ansible",
+  ];
 
   return (
     <section
@@ -29,7 +43,7 @@ export const About = () => {
               applications and creating innovative solutions.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4"> Frontend</h3>
                 <div className="flex flex-wrap gap-2">
@@ -49,6 +63,20 @@ export const About = () => {
                 <h3 className="text-xl font-bold mb-4"> Backend</h3>
                 <div className="flex flex-wrap gap-2">
                   {backendSkills.map((tech, key) => (
+                    <span
+                      key={key}
+                      className="bg-teal-700 text-white py-1 px-3 rounded-full text-sm hover:bg-teal-900 transition
+                    "
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+                <h3 className="text-xl font-bold mb-4"> Devops</h3>
+                <div className="flex flex-wrap gap-2">
+                  {devopsSkills.map((tech, key) => (
                     <span
                       key={key}
                       className="bg-teal-700 text-white py-1 px-3 rounded-full text-sm hover:bg-teal-900 transition
