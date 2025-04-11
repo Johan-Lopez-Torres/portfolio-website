@@ -60,9 +60,14 @@ export default function ImageModal({ src, alt, className = '' }) {
       <img
         src={src}
         alt={alt}
-        className={`cursor-pointer rounded-lg transition-transform duration-200 hover:scale-105 ${className}`}
+        className={`cursor-pointer rounded-lg   transition-transform duration-200 hover:scale-105 ${className}`}
         onClick={() => setIsOpen(true)}
       />
+
+      
+      
+      
+
 
       {isOpen && (
         <ModalPortal>
@@ -97,6 +102,7 @@ export default function ImageModal({ src, alt, className = '' }) {
                 transformOrigin: origin,
               }}
             />
+            
           </div>
         </ModalPortal>
       )}

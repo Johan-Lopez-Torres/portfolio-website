@@ -1,11 +1,30 @@
 import { useEffect, useState } from "react";
 import { IoMenuOutline } from "react-icons/io5";
 
-
 export const Navbar = ({ menuOpen, setMenuOpen, setIsModalOpen }) => {
-  
   const [activeSection, setActiveSection] = useState("");
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Detectar dirección de scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowNavbar(false); // Oculta cuando bajas
+      } else {
+        setShowNavbar(true); // Muestra cuando subes
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  // Detectar sección activa
   useEffect(() => {
     const sections = document.querySelectorAll("section");
 
@@ -52,7 +71,11 @@ export const Navbar = ({ menuOpen, setMenuOpen, setIsModalOpen }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 inset-x-0 w-full z-40 backdrop-blur-lg shadow-lg">
+    <nav
+      className={`fixed top-0 left-0 inset-x-0 w-full z-40 backdrop-blur-lg shadow-lg transition-transform duration-500 ${
+        showNavbar ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="flex justify-between items-center h-16">
           <a href="#home" className="font-mono text-xl font-bold text-white">
@@ -74,8 +97,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, setIsModalOpen }) => {
                 onClick={(e) => {
                   e.preventDefault();
                   if (item === "Email") {
-                    console.log("Email clicked");
-                    setIsModalOpen(true); // Open the modal when "Email" is clicked
+                    setIsModalOpen(true);
                   } else {
                     scrollToSection(item.toLowerCase());
                   }
@@ -101,7 +123,7 @@ export const Navbar = ({ menuOpen, setMenuOpen, setIsModalOpen }) => {
                 onClick={(e) => {
                   e.preventDefault();
                   if (item === "Email") {
-                    setIsModalOpen(true); // Open the modal when "Email" is clicked
+                    setIsModalOpen(true);
                   } else {
                     scrollToSection(item.toLowerCase());
                   }

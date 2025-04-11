@@ -61,7 +61,7 @@ export const Home = () => {
             <img
               src={foto}
               alt="Profile Picture"
-              className=" w-60     md:w-72    lg:w-96 max-w-sm p-2 border-teal-300 border-2 brightness-90 md:max-w-md rounded-full transition-transform transform hover:scale-110 hover:opacity-90 duration-500"
+              className=" w-60     md:w-72    lg:w-96 max-w-sm p-2 border-teal-300 border-2 brightness-90 md:max-w-md rounded-full transition-transform transform hover:scale-110 hover:opacity-90 duration-700"
             />
           </div>
         </div>

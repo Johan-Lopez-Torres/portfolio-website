@@ -21,6 +21,7 @@ const SocialIcons = ({ socials, className }) => {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
+            title={platform}
           >
             <IconComponent className={`text-gray-400 hover:text-gray-300  text-5xl  md:text-6xl cursor-pointer mx-3 transition-colors duration-500 ease-in-out transform hover:scale-110 ${className}`} />
           </a>

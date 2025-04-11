@@ -35,7 +35,6 @@ import { DiRedis } from "react-icons/di";
 import { FaJenkins } from "react-icons/fa";
 import { FaAws } from "react-icons/fa";
 
-
 const iconMap = {
   java: FaJava,
   golang: FaGolang,
@@ -44,7 +43,6 @@ const iconMap = {
   googlecloud: SiGooglecloud,
   kubernetes: SiKubernetes,
   docker: FaDocker,
-
 
   postgresql: DiPostgresql,
   react: FaReact,
@@ -55,16 +53,9 @@ const iconMap = {
   redis: DiRedis,
   jenkins: FaJenkins,
   aws: FaAws,
-
-
-
-
-
-
-
 };
 
-const TechIcon = ({ name, title, className = '' }) => {
+const TechIcon = ({ name, title, className = "" }) => {
   const IconComponent = iconMap[name];
 
   if (!IconComponent) {

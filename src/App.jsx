@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useViewportScroll } from "framer-motion";
+import Lenis from "@studio-freight/lenis"; // 👈 import Lenis
 import "./App.css";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
@@ -18,21 +19,38 @@ import DialogDemo from "./components/modals/EmailModal";
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Manage modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Hook to track scroll progress
   const { scrollYProgress } = useViewportScroll();
-
-  // State to store scroll progress and trigger content visibility
   const [yProgress, setYProgress] = useState(0);
 
   const toggleDarkMode = () => {
     document.documentElement.classList.toggle("dark");
   };
 
+  // 🔥 Smooth scroll con Lenis
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.6, // entre 1.2 y 2.0 se ve MUY suave
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easing personalizada
+      smooth: true,
+    });
+
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   useEffect(() => {
     return scrollYProgress.onChange((p) => {
-      setYProgress(p); // Update progress value as the page scrolls
+      setYProgress(p);
     });
   }, [scrollYProgress]);
 
@@ -55,22 +73,21 @@ function App() {
         transition={{ duration: 0.1 }}
       />
 
-      {/* Pantalla de carga */}
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
 
-      {/* Contenido de la aplicación */}
       <div
-        className={`min-h-screen  px-28 md:px-44 transition-opacity duration-700 ${
+        className={`min-h-screen px-28 md:px-44 transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-neutral-900 text-yellow-200`}
       >
         <Navbar
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
-          setIsModalOpen={setIsModalOpen} // Pass the function to open the modal
+          setIsModalOpen={setIsModalOpen}
         />
-        {isModalOpen && <DialogDemo isOpen={isModalOpen} closeDialog={() => setIsModalOpen(false)} />} {/* Pass modal control */}
-
+        {isModalOpen && (
+          <DialogDemo isOpen={isModalOpen} closeDialog={() => setIsModalOpen(false)} />
+        )}
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
         <div className="h-20"></div>
@@ -78,12 +95,10 @@ function App() {
         <div className="lg:h-0 h-20"></div>
         <Skills />
         <div className="lg:h-0 h-20"></div>
-
         <Ressume />
         <div className="h-16"></div>
         <Projects />
         <div className="h-16"></div>
-
         <Contact />
         <ScrollButtons />
       </div>
