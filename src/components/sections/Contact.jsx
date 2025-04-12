@@ -48,8 +48,9 @@ export const Contact = () => {
   }, [showModal]);
 
   return (
+    <RevealOnScroll>
+
     <section id="contact" className="min-h-screen flex items-center justify-center relative">
-      <RevealOnScroll>
         <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3">
           <h2 className="text-3xl font-bold mb-8 text-teal-300 text-center">
             Get In Touch
@@ -94,7 +95,6 @@ export const Contact = () => {
             </button>
           </form>
         </div>
-      </RevealOnScroll>
 
       {/* ✅ Modal con detección de clics fuera */}
       {showModal && (
@@ -117,5 +117,7 @@ export const Contact = () => {
         </div>
       )}
     </section>
+    </RevealOnScroll>
+/*  */
   );
 };

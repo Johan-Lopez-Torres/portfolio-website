@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, useViewportScroll } from "framer-motion";
-import Lenis from "@studio-freight/lenis"; // 👈 import Lenis
 import "./App.css";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
@@ -27,26 +26,6 @@ function App() {
   const toggleDarkMode = () => {
     document.documentElement.classList.toggle("dark");
   };
-
-  // 🔥 Smooth scroll con Lenis
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.6, // entre 1.2 y 2.0 se ve MUY suave
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easing personalizada
-      smooth: true,
-    });
-
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
 
   useEffect(() => {
     return scrollYProgress.onChange((p) => {
