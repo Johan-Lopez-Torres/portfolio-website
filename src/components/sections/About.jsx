@@ -8,15 +8,9 @@ export const About = () => {
     "TailwindCSS",
     "Svelte",
   ];
-  
-  const backendSkills = [
-    "Node.js",
-    "Python",
-    "AWS",
-    "MongoDB",
-    "GraphQL",
-  ];
-  
+
+  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "GraphQL"];
+
   const devopsSkills = [
     "Docker",
     "Kubernetes",
@@ -95,8 +89,11 @@ export const About = () => {
               <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>
-                  <strong> B.S. in Computer Science </strong> - XYZ University
-                  (2016-2020)
+                  <strong>
+                    {" "}
+                    Graduate in Systems and Computer Engineering{" "}
+                  </strong>{" "}
+                  - Universidad Nacional del Santa (2019-2024)
                 </li>
                 <li>
                   Relevant Coursework: Data Structures, Web Development, Cloud
@@ -105,30 +102,29 @@ export const About = () => {
               </ul>
             </div>
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
-              <div className="space-y-4 text-gray-300">
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Software Engineer at ABC Corp (2020 - Present){" "}
-                  </h4>
-                  <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Intern at DEF Startups (2019){" "}
-                  </h4>
-                  <p>
-                    Assisted in building front-end components and integration
-                    REST APIs
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-xl font-bold mb-4"> 🎓 Certificates </h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <li>
+                  <strong>AWS for Web Developers</strong>, Udemy (Feb 2025)
+                </li>
+                <li>
+                  <strong>GitHub Foundations</strong>, GitHub (Jan 2025 – Jan
+                  2028)
+                </li>
+                <li>
+                  <strong>Scrum Fundamentals</strong>, SCRUMstudy (Feb 2024)
+                </li>
+                <li>
+                  <strong>Azure: Architecture & Services</strong>, Microsoft
+                  (Nov 2023)
+                </li>
+                <li>
+                  <strong>Azure: Cloud Concepts</strong>, Microsoft (Nov 2023)
+                </li>
+                <li>
+                  <strong>AZ-305 Prerequisites</strong>, Microsoft (Nov 2023)
+                </li>
+              </ul>
             </div>
           </div>
         </div>

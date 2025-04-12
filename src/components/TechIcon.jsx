@@ -34,6 +34,9 @@ import { SiRabbitmq } from "react-icons/si";
 import { DiRedis } from "react-icons/di";
 import { FaJenkins } from "react-icons/fa";
 import { FaAws } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
+import { SiDotnet } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
 
 const iconMap = {
   java: FaJava,
@@ -53,6 +56,9 @@ const iconMap = {
   redis: DiRedis,
   jenkins: FaJenkins,
   aws: FaAws,
+  typescript: SiTypescript,
+  dotnet: SiDotnet,
+  tailwind: RiTailwindCssFill,
 };
 
 const TechIcon = ({ name, title, className = "" }) => {

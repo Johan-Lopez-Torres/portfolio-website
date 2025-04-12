@@ -14,11 +14,11 @@ const Footer = () => {
   ];
 
   const links = [
-    { href: "/info", label: "Info" },
-    { href: "/support", label: "Support" },
-    { href: "/marketing", label: "Marketing" },
-    { href: "/terms", label: "Terms of Use" },
-    { href: "/privacy", label: "Privacy Policy" },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#skills", label: "Skills" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (

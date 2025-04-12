@@ -14,6 +14,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { DiMongodb } from "react-icons/di";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { RevealOnScroll } from "../RevealOnScroll";
 
 const Skills = () => {
   const skills = [
@@ -32,28 +33,30 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center ">
-        <div className="w-full  max-w-6xl  ">
-          <h1 className="text-5xl font-bold  text-center text-teal-500 mb-12">
-            Skills
-          </h1>
-          <div className="grid  px-12   grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-6 gap-9  gap-y-9 md:gap-y-16">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="flex flex-col   items-center justify-center p-4 bg-white/10 rounded-xl transition-transform duration-900 transform hover:rotate-y-180 hover:translate-x-2  hover:bg-white/20"
-              >
-                <div className="mb-3   relative perspective-1500 ">
-                  <div className="skill-icon ">{skill.icon}</div>
+    <RevealOnScroll>
+      <section id="skills" className="min-h-screen flex items-center justify-center ">
+          <div className="w-full  max-w-6xl  ">
+            <h1 className="text-5xl font-bold  text-center text-teal-500 mb-12">
+              Skills
+            </h1>
+            <div className="grid  px-12   grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-6 gap-9  gap-y-9 md:gap-y-16">
+              {skills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col   items-center justify-center p-4 bg-white/10 rounded-xl transition-transform duration-900 transform hover:rotate-y-180 hover:translate-x-2  hover:bg-white/20"
+                >
+                  <div className="mb-3   relative perspective-1500 ">
+                    <div className="skill-icon ">{skill.icon}</div>
+                  </div>
+                  <span className="text-white text-sm font-medium">
+                    {skill.name}
+                  </span>
                 </div>
-                <span className="text-white text-sm font-medium">
-                  {skill.name}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-    </section>
+      </section>
+    </RevealOnScroll>
   );
 };
 
